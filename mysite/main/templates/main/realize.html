@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Realizacje {% endblock %}
+
+{% block content %}
+    <h1>Oto lista realizowanych zakupów: </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Miejscowość</th>
+                <th scope="col">Adres</th>
+                <th scope="col">Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for l in realizes %}
+
+                    <tr>
+                        <td>{{ l.data }} </td>
+                        <td>{{ l.miejscowosc }}</td>
+                        <td>{{ l.adres }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="/info/{{ l.id }}" role="button" >{{ l.id }}</a>
+                        </td>
+
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

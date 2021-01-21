@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% block title %} Dodaj {% endblock %}
+
+{% block content %}
+
+    <h1> Edytuj listę lub dane:  </h1>
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="stwórz" type="submit" class="btn btn-success">Stórz</button>
+    </form>
+
+
+{% endblock %}
+
+
+
+
+

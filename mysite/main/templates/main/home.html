@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+
+{% block title %} HoMe {% endblock %}
+
+{% block content %}
+    <center>
+        <form class="form-inline my-2 my-lg-0" style="width: 200px;" >
+            <input class="form-control mr-sm-2 " type="search" placeholder="Szukaj miasto" aria-label="Search" name="q">
+
+        </form>
+    </center>
+
+
+    <h2>Pomocy potrzebuje: </h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Miejscowość</th>
+                <th scope="col">Adres</th>
+                <th scope="col">Stan</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for l in lista %}
+                <tr>
+                    {% if l.aktywne %}
+                        <td>{{ l.data }} </td>
+                        <td>{{ l.miejscowosc }}</td>
+                        <td>{{ l.adres }}</td>
+
+                        <td>
+                            <a class="btn btn-primary" href="/info/{{ l.id }}" role="button" >Link</a>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

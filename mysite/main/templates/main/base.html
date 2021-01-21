@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+
+      .sidenav {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #3d6cb9;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+
+
+      .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fafaf6;
+        display: block;
+      }
+
+
+      .sidenav a:hover {
+
+         text-decoration: none;
+         background-color: #fafaf6;
+
+      }
+        hr {
+            border-top: 1px dashed red;
+        }
+
+      .main {
+        margin-left: 160px;
+        padding: 0px 10px;
+      }
+
+
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>{% block title %}Senior support{% endblock %}</title>
+</head>
+
+<body>
+  <!-- Side navigation -->
+  <div class="sidenav">
+      <a href="/">Home</a>
+      <a href="/jak/">Jak to działa</a>
+      <a href="/dodaj">Stwórz</a>
+      <a href="/realizowane/">Realizowane</a>
+      <a href="/usun/">Usuń</a>
+  </div>
+
+  <!-- Page content -->
+  <div class="main">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <h1 class="mt-2">Pomóż Seniorowi</h1>
+        <hr class="mt-0 mb-4" >
+        {% block content %}
+        {% endblock %}
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</body>
+</html>
+

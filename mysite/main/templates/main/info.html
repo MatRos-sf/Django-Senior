@@ -1,0 +1,70 @@
+
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %} Info {% endblock %}
+
+{% block content %}
+    <p class="text-justify" style="font-size:30px">
+        Pani {{ lista.imie }} {{ lista.nazwisko }} potrzebuje pomocy przy zakupach:
+    </p>
+
+    <p class="font-weight-bold text-center " style="font-size:20px">{{ lista.lista }}</p>
+
+    <p class="text-justify" style="font-size:30px">
+       Adres: {{ lista.adres }}, {{ lista.miejscowosc }}
+    </p>
+
+    <p class="text-justify" style="font-size:30px; color: #3d6cb9;">
+        Przed zrobieniem zakupów skontaktuj się z seniorem:
+    </p>
+
+    <p class="text-justify text-center" style="font-size:20px;">
+        telefon: {{ lista.telefon }}
+        {% if lista.email %}
+            email: {{ lista.email }}
+        {% endif %}
+    </p>
+
+    <p class="text-justify" style="font-size:20px;">
+        ID listy:  {{ lista.id }}
+    </p>
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Kod QR listy zakupów
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Lista Zakupów</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Oto QR listy zakupów:
+                    <img src ="{% static 'main/code/' %}{{lista.id}}.jpg" width="400" height="400">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    {% if lista.aktywne %}
+        <form action="#" method="get">
+            <input type="submit" class="btn btn-primary" value="Podejmuj" name="mybtn">
+        </form>
+    {% endif %}
+    {% endblock %}
+
+
+
+
+
